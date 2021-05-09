@@ -6,7 +6,7 @@
     </head>
 
     <body>
-
+        
         <!--Test de la connexion à la BD -->
         <?php   $servername = 'localhost';
                 $login = 'root';
@@ -17,19 +17,21 @@
                     die('Erreur : ' .mysqli_connect_error());
                 }
                 echo 'Connexion réussie';
+                
+                //Requêtes de récupération des données dans la base MySQL
+                $etudiants = $connexion->query('SELECT * FROM etudiant');
+                $matières = $connexion->query('SELECT * FROM matiere');
+        ?>  
+            <form action="moyenne.php" method="post">
+                <p>Rentrez les notes des étudiants suivants :</p>
+        <?php
+                while ($etudiant = $etudiants->fetch()){
         ?>
+                    <p><?php echo $etudiant['nom'] . " " . $etudiant['prenom'];?>
 
-        <form action="moyenne.php" method="post">
-            <p>Rentrez une note : <input type="text" name="note" /></p>
-            <p>Choisissez une matière : </p>
-                <select name="matière">
-                <option value="fr">Français</option>
-                <option value="hg">Histoire-Géo</option>
-                <option value="maths">Mathématiques</option>
-                <option value="ang">Anglais</option>
-            </select>
-        
-            <p><input type="submit" value="OK"></p>
-        </form>
+                    </p>
+          <?php } ?>
+                <p><input type="submit" value="OK"></p>
+            </form>
     </body>
 </html>
