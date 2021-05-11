@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS matiere(
+   id_matiere INT AUTO_INCREMENT,
+   nom_matiere VARCHAR(20) NOT NULL,
+   PRIMARY KEY(id_matiere)
+);
+
+CREATE TABLE IF NOT EXISTS etudiant(
+   id_etudiant INT AUTO_INCREMENT,
+   nom VARCHAR(20) NOT NULL,
+   prenom VARCHAR(20) NOT NULL,
+   PRIMARY KEY(id_etudiant)
+);
+
+CREATE TABLE IF NOT EXISTS note(
+   id_note INT AUTO_INCREMENT,
+   note DOUBLE NOT NULL,
+   coef DOUBLE NOT NULL,
+   id_matiere INT NOT NULL,
+   id_etudiant INT NOT NULL,
+   PRIMARY KEY(id_note),
+   FOREIGN KEY(id_matiere) REFERENCES matiere(id_matiere),
+   FOREIGN KEY(id_etudiant) REFERENCES etudiant(id_etudiant)
+);

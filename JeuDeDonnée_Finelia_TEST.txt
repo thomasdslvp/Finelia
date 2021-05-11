@@ -1,0 +1,13 @@
+INSERT INTO etudiant(nom, prenom) VALUES("Dupond", "Jean");
+INSERT INTO etudiant(nom, prenom) VALUES("Authier", "Vincent");
+INSERT INTO etudiant(nom, prenom) VALUES("Audet", "Éric");
+INSERT INTO etudiant(nom, prenom) VALUES("Boisclair", "Jules");
+INSERT INTO etudiant(nom, prenom) VALUES("Talon", "Frédérique");
+INSERT INTO etudiant(nom, prenom) VALUES("Lagacé", "Nathalie");
+INSERT INTO etudiant(nom, prenom) VALUES("Gagnon", "Carole");
+INSERT INTO etudiant(nom, prenom) VALUES("Course", "Paul");
+
+INSERT INTO matiere(nom_matiere) VALUES("Français");
+INSERT INTO matiere(nom_matiere) VALUES("Histoire-Géo");
+INSERT INTO matiere(nom_matiere) VALUES("Mathématiques");
+INSERT INTO matiere(nom_matiere) VALUES("Anglais");
